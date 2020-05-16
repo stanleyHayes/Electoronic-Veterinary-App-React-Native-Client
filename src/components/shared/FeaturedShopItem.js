@@ -1,15 +1,14 @@
 import React from 'react';
-import {Card, CardItem, Left, Body, H2, Text} from 'native-base';
+import {Card, CardItem, Body, H2, Text} from 'native-base';
 import {Image, StyleSheet} from 'react-native';
 
-function ShopItem({item, navigation}) {
+function FeaturedShopItem({item, navigation}) {
     return (
         <Card>
             <CardItem
-                onPress={()=> (navigation.navigate("ShopDetailsTopTabsNavigator", {shop: item}))}
+                onPress={() => (navigation.navigate('ShopDetailsTopTabsNavigator', {shop: item}))}
                 bordered={true} button={true} header={true}>
                 <Image
-                    height={150}
                     source={{uri: item.image}}
                     style={styles.image}
                     borderRadius={8}
@@ -19,7 +18,6 @@ function ShopItem({item, navigation}) {
             <CardItem button={true} bordered={true}>
                 <Body>
                     <H2>{item.name}</H2>
-                    <Text style={styles.descriptionText}>{item.description}</Text>
                 </Body>
             </CardItem>
         </Card>
@@ -28,14 +26,14 @@ function ShopItem({item, navigation}) {
 
 const styles = StyleSheet.create({
     image: {
-        width: null,
+        width: 300,
         flex: 1,
         height: 300,
     },
     descriptionText: {
         fontSize: 14,
         color: '#777777',
-    },
+    }
 });
 
-export default ShopItem;
+export default FeaturedShopItem;

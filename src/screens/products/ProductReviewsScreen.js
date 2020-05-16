@@ -2,7 +2,7 @@ import React from "react";
 import {Container, Content, H1} from 'native-base';
 import {StyleSheet} from 'react-native';
 
-function ProductReviewsScreen() {
+function ProductReviewsScreen({route, navigation}) {
     return (
         <Container>
             <Content>

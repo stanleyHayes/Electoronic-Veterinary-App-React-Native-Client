@@ -10,8 +10,22 @@ const TopTabsNavigator = createMaterialTopTabNavigator();
 function ProductsTopTabsNavigator() {
     return (
         <TopTabsNavigator.Navigator>
-            <TopTabsNavigator.Screen name="ProductInformationScreen" component={ProductInformationScreen} />
-            <TopTabsNavigator.Screen name="ProductReviewsScreen" component={ProductReviewsScreen} />
+
+            <TopTabsNavigator.Screen
+                options={{
+                    title: "Info"
+                }}
+                name="ProductInformationScreen"
+                component={ProductInformationScreen}
+            />
+
+            <TopTabsNavigator.Screen
+                options={{
+                    title: "Reviews"
+                }}
+                name="ProductReviewsScreen"
+                component={ProductReviewsScreen}
+            />
         </TopTabsNavigator.Navigator>
     )
 }
