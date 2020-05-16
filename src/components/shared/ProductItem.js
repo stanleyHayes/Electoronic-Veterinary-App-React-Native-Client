@@ -6,15 +6,7 @@ function ProductItem({item, navigation}) {
     return (
         <Card>
             <CardItem
-                onPress={() => navigation.navigate('ProductsTopTabsNavigator',
-                    {
-                        screen: 'ProductInformationScreen',
-                        params: {product: item},
-                    }, {
-                        screen: 'ProductReviewsScreen',
-                        params: {product: item},
-                    },
-                )}
+                onPress={() => navigation.navigate('ProductDetailsTopTabsNavigator', {product: item})}
                 button={true}
                 bordered={true}>
                 <Image

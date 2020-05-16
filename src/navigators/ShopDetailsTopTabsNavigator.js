@@ -8,6 +8,7 @@ import ShopReviewsScreen from '../screens/shops/ShopReviewsScreen';
 const TopTabsNavigator = createMaterialTopTabNavigator();
 
 function ShopDetailsTopTabsNavigator() {
+
     return (
         <TopTabsNavigator.Navigator>
             <TopTabsNavigator.Screen

@@ -3,15 +3,18 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 
 import ShopTopTabsNavigator from './ShopTopTabsNavigator';
+
+import ProductDetailStackNavigator from './ProductDetailStackNavigator';
+import ShopDetailStackNavigator from './ShopDetailStackNavigator';
+import ProductDetailsTopTabsNavigator from './ProductDetailsTopTabsNavigator';
 import ShopDetailsTopTabsNavigator from './ShopDetailsTopTabsNavigator';
-import ProductsTopTabsNavigator from './ProductsTopTabsNavigator';
 
 const StackNavigator = createStackNavigator();
 
 function ShopsStackNavigator() {
+
     return (
         <StackNavigator.Navigator
-
             initialRouteName="ShopTopTabsNavigator"
             screenOptions={{ headerShown: true, title: "Shop"}}>
 
@@ -32,8 +35,10 @@ function ShopsStackNavigator() {
                 options={{
                     title: "Product"
                 }}
-                name="ProductsTopTabsNavigator"
-                component={ProductsTopTabsNavigator} />
+                name="ProductDetailsTopTabsNavigator"
+                component={ProductDetailsTopTabsNavigator}
+            />
+
         </StackNavigator.Navigator>
     )
 }

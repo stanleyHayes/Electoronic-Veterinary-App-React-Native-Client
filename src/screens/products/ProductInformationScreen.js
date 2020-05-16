@@ -5,60 +5,56 @@ import {Image, StyleSheet, View} from 'react-native';
 
 function ProductInformationScreen({navigation, route}) {
 
-    const {product} = route.params;
-    console.log(route)
-
-    useEffect(function () {
-        navigation.setParams({product})
-    }, [])
-
+    console.log('Dangerously Get State', navigation.dangerouslyGetState());
+    // const {product} = route.params;
+    // console.log('product', product);
     return (
         <Container>
             <Content style={styles.content}>
-                <View style={styles.container}>
-                    <View style={styles.imageContainer}>
-                        <Image
-                            style={styles.image}
-                            fadeDuration={300}
-                            source={{uri: product.image}}
-                        />
-                    </View>
+                {/*<View style={styles.container}>*/}
+                {/*    <View style={styles.imageContainer}>*/}
+                {/*        <Image*/}
+                {/*            style={styles.image}*/}
+                {/*            fadeDuration={300}*/}
+                {/*            source={{uri: product.image}}*/}
+                {/*        />*/}
+                {/*    </View>*/}
 
-                    <View style={styles.productInfoContainer}>
-                        <H2 style={styles.name}>{product.name}</H2>
-                        <Separator  style={styles.separator} bordered={true}>
-                            <View style={styles.item}>
-                                <Text style={styles.label}>Category</Text>
-                                <Text style={styles.price}>{product.category}</Text>
-                            </View>
-                        </Separator>
+                {/*    <View style={styles.productInfoContainer}>*/}
+                {/*        <H2 style={styles.name}>{product.name}</H2>*/}
+                {/*        <Separator  style={styles.separator} bordered={true}>*/}
+                {/*            <View style={styles.item}>*/}
+                {/*                <Text style={styles.label}>Category</Text>*/}
+                {/*                <Text style={styles.price}>{product.category}</Text>*/}
+                {/*            </View>*/}
+                {/*        </Separator>*/}
 
-                        <Separator style={styles.separator} bordered={true}>
-                            <View style={styles.item}>
-                                <Text style={styles.label}>Price</Text>
-                                <H3 style={styles.price}>${product.price}</H3>
-                            </View>
-                        </Separator>
+                {/*        <Separator style={styles.separator} bordered={true}>*/}
+                {/*            <View style={styles.item}>*/}
+                {/*                <Text style={styles.label}>Price</Text>*/}
+                {/*                <H3 style={styles.price}>${product.price}</H3>*/}
+                {/*            </View>*/}
+                {/*        </Separator>*/}
 
-                        <Separator style={styles.separator} bordered={true}>
-                            <View style={styles.item}>
-                                <Text style={styles.label}>Average Rating</Text>
-                                <Text style={styles.price}>{product.rating}</Text>
-                            </View>
-                        </Separator>
+                {/*        <Separator style={styles.separator} bordered={true}>*/}
+                {/*            <View style={styles.item}>*/}
+                {/*                <Text style={styles.label}>Average Rating</Text>*/}
+                {/*                <Text style={styles.price}>{product.rating}</Text>*/}
+                {/*            </View>*/}
+                {/*        </Separator>*/}
 
-                        <Text style={styles.label}>Product Description</Text>
-                        <Text style={styles.description}>{product.description}</Text>
-                        <View style={styles.buttonsContainer}>
-                            <Button bordered={true} rounded={true}>
-                                <Icon name="favorite" type="MaterialIcons"/>
-                            </Button>
-                            <Button style={styles.addToCartButton} rounded={true} block={true}>
-                                <Text>Add to cart</Text>
-                            </Button>
-                        </View>
-                    </View>
-                </View>
+                {/*        <Text style={styles.label}>Product Description</Text>*/}
+                {/*        <Text style={styles.description}>{product.description}</Text>*/}
+                {/*        <View style={styles.buttonsContainer}>*/}
+                {/*            <Button bordered={true} rounded={true}>*/}
+                {/*                <Icon name="favorite" type="MaterialIcons"/>*/}
+                {/*            </Button>*/}
+                {/*            <Button style={styles.addToCartButton} rounded={true} block={true}>*/}
+                {/*                <Text>Add to cart</Text>*/}
+                {/*            </Button>*/}
+                {/*        </View>*/}
+                {/*    </View>*/}
+                {/*</View>*/}
             </Content>
         </Container>
     );
@@ -137,8 +133,8 @@ const styles = StyleSheet.create({
     },
     separator: {
         paddingVertical: 16,
-        marginVertical: 8
-    }
+        marginVertical: 8,
+    },
 });
 
 export default ProductInformationScreen;

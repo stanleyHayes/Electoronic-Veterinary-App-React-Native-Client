@@ -7,7 +7,7 @@ import ProductReviewsScreen from '../screens/products/ProductReviewsScreen';
 
 const TopTabsNavigator = createMaterialTopTabNavigator();
 
-function ProductsTopTabsNavigator() {
+function ProductDetailsTopTabsNavigator() {
     return (
         <TopTabsNavigator.Navigator>
 
@@ -30,4 +30,4 @@ function ProductsTopTabsNavigator() {
     )
 }
 
-export default ProductsTopTabsNavigator;
+export default ProductDetailsTopTabsNavigator;
