@@ -2,12 +2,12 @@ import React from "react";
 import {Container, Content, H1} from 'native-base';
 import {StyleSheet} from 'react-native';
 
-function ProductReviewsScreen({route, navigation}) {
+function ClinicDetailsScreen({route, navigation}) {
 
     return (
         <Container>
             <Content>
-                <H1>Product Reviews</H1>
+                <H1>Clinic Details Screen</H1>
             </Content>
         </Container>
     )
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default ProductReviewsScreen;
+export default ClinicDetailsScreen;

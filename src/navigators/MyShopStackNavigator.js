@@ -2,8 +2,6 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 
-import ShopTopTabsNavigator from './ShopTopTabsNavigator';
-import ShopDetailsTopTabsNavigator from './ShopDetailsTopTabsNavigator';
 import MyShopsScreen from '../screens/shops/MyShopsScreen';
 import MyShopDetailsTopTabsNavigator from './MyShopDetailTopTabsNavigator';
 

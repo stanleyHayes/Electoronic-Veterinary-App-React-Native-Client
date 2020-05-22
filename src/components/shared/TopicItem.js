@@ -21,14 +21,14 @@ function TopicItem({item, navigation}) {
                             <Avatar.Text size={48} label={getInitials(item.author.name)}/>
                         )}
                     <Body>
-                        <H3>{item.author.name}</H3>
+                        <Text style={styles.authorName}>{item.author.name}</Text>
                         <Text style={styles.createdAt}>{new Date(item.createdAt).toDateString()}</Text>
                     </Body>
                 </Left>
             </CardItem>
             <CardItem bordered={true}>
                 <Body>
-                    <H3>{item.subject}</H3>
+                    <Text style={styles.subject}>{item.subject}</Text>
                     <Text style={styles.descriptionText}>{item.description}</Text>
                 </Body>
             </CardItem>
@@ -66,6 +66,15 @@ const styles = StyleSheet.create({
     descriptionText: {
         color: "#888888",
         fontSize: 14
+    },
+    authorName: {
+        fontWeight: "bold",
+        fontSize: 20
+    },
+    subject: {
+        fontSize: 18,
+        fontWeight: "bold",
+        color: "#777777"
     }
 });
 export default TopicItem;

@@ -8,7 +8,7 @@ function ClinicListItem({item, navigation}) {
     return (
         <Card>
             <CardItem
-                onPress={()=> (navigation.navigate("ClinicDetailsTopTabsNavigator", {clinic: item}))}
+                onPress={()=> (navigation.navigate("ClinicDetailStackNavigator", {clinic: item}))}
                 button={true} bordered={true}>
                 <Image
                     source={{uri: item.image}}

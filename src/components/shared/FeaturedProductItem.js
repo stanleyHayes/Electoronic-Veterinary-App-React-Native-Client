@@ -1,28 +1,32 @@
 import React from 'react';
-import {CardItem, Card, Body, Text} from 'native-base';
+import {CardItem, Card, Body, Text, Left, Thumbnail} from 'native-base';
 import {Image, StyleSheet} from 'react-native';
 
-function FeaturedProductItem({item, navigation}) {
+function FeaturedProductItem({item, navigation, clickable}) {
 
     return (
         <Card>
             <CardItem
-                onPress={() => navigation.navigate('ProductDetailsTopTabsNavigator', {product: item})}
-                button={true}
+                onPress={() => navigation.navigate('ProductDetailStackNavigator',
+                    {
+                        screen: 'ProductInformationScreen',
+                        params: {product: item},
+                    },
+                )}
+                button={clickable}
                 bordered={true}>
-                <Image
-                    height={150}
-                    source={{uri: item.image}}
-                    style={styles.image}
-                    borderRadius={8}
-                    fadeDuration={300}
-                />
-            </CardItem>
-            <CardItem bordered={true}>
-                <Body style={styles.infoContainer}>
-                    <Text>{item.name}</Text>
-                    <Text style={styles.price}>${item.price}</Text>
-                </Body>
+                <Left>
+                    <Thumbnail
+                        large={true}
+                        square={true}
+                        source={{uri: item.image}}
+                    />
+                    <Body style={styles.infoContainer}>
+                        <Text>{item.name}</Text>
+                        <Text>{item.category}</Text>
+                        <Text style={styles.price}>${item.price}</Text>
+                    </Body>
+                </Left>
             </CardItem>
         </Card>
     );
@@ -30,9 +34,8 @@ function FeaturedProductItem({item, navigation}) {
 
 const styles = StyleSheet.create({
     image: {
-        width: 300,
-        flex: 1,
-        height: 300,
+        width: 250,
+        height: 200,
     },
     price: {
         fontSize: 16,

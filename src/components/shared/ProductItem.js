@@ -1,27 +1,27 @@
 import React from 'react';
-import {CardItem, Card, H2, Text, Body} from 'native-base';
+import {CardItem, Card, H2, Text, Body, Left, Thumbnail} from 'native-base';
 import {Image, StyleSheet} from 'react-native';
 
-function ProductItem({item, navigation}) {
+function ProductItem({item, navigation, clickable}) {
+
     return (
         <Card>
             <CardItem
-                onPress={() => navigation.navigate('ProductDetailsTopTabsNavigator', {product: item})}
-                button={true}
+                onPress={() => navigation.navigate('ProductInformationScreen',{product: item})}
+                button={clickable}
                 bordered={true}>
-                <Image
-                    height={150}
-                    source={{uri: item.image}}
-                    style={styles.image}
-                    borderRadius={8}
-                    fadeDuration={300}
-                />
-            </CardItem>
-            <CardItem bordered={true}>
-                <Body style={styles.infoContainer}>
-                    <H2>{item.name}</H2>
-                    <Text style={styles.price}>${item.price}</Text>
-                </Body>
+                <Left>
+                    <Thumbnail
+                        large={true}
+                        circular={true}
+                        source={{uri: item.image}}
+                    />
+                    <Body style={styles.infoContainer}>
+                        <Text style={styles.name}>{item.name}</Text>
+                        <Text style={styles.category}>{item.category}</Text>
+                        <Text style={styles.price}>${item.price}</Text>
+                    </Body>
+                </Left>
             </CardItem>
         </Card>
     );
@@ -29,17 +29,24 @@ function ProductItem({item, navigation}) {
 
 const styles = StyleSheet.create({
     image: {
-        width: null,
-        flex: 1,
-        height: 300,
+        width: 250,
+        height: 200,
     },
     price: {
-        fontSize: 20,
+        fontSize: 16,
         color: '#777777',
     },
     infoContainer: {
-        alignItems: 'center',
+        alignItems: 'flex-start',
     },
+    name: {
+        fontWeight: "bold",
+        fontSize: 20
+    },
+    category: {
+        fontSize: 12,
+        color: "#777777"
+    }
 });
 
 export default ProductItem;

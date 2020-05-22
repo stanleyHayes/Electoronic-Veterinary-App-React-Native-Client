@@ -23,7 +23,7 @@ function ProductsScreen({ products, navigation}) {
                             }}
                             renderItem={function ({item}) {
                                 return (
-                                    <ProductItem item={item} navigation={navigation}/>
+                                    <ProductItem clickable={true} item={item} navigation={navigation}/>
                                 );
                             }}/>
                     )

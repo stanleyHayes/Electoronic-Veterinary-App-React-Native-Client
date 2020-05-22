@@ -38,7 +38,7 @@ function MoreScreen({navigation}) {
                             <Icon name="shop" type="MaterialIcons"/>
                         </Left>
                         <Body>
-                            <Text>Shops</Text>
+                            <Text>My Products</Text>
                         </Body>
                         <Right>
                             <Icon name="chevron-right" type="MaterialIcons"/>

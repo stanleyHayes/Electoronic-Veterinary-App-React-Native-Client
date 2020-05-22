@@ -1,8 +1,9 @@
 import React from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import ShopsScreen from '../screens/shops/ShopsScreen';
-import FeaturedItemsScreen from '../screens/others/FeaturedItemsScreen';
-import ProductsScreen from '../screens/products/ProductsScreen';
+
+import FeaturedShopsScreen from '../screens/shops/FeaturedShopsScreen';
+import PopularShopsScreen from '../screens/shops/PopularShopsScreen';
 
 const TopTabsNavigator = createMaterialTopTabNavigator();
 
@@ -13,16 +14,16 @@ function ShopTopTabsNavigator() {
                 options={{
                     title: "Featured"
                 }}
-                name="FeaturedItemsScreen"
-                component={FeaturedItemsScreen}
+                name="FeaturedShopsScreen"
+                component={FeaturedShopsScreen}
             />
 
             <TopTabsNavigator.Screen
                 options={{
-                    title: "Products"
+                    title: "Popular"
                 }}
-                name="ProductsScreen"
-                component={ProductsScreen}
+                name="PopularShopsScreen"
+                component={PopularShopsScreen}
             />
 
             <TopTabsNavigator.Screen
@@ -32,6 +33,7 @@ function ShopTopTabsNavigator() {
                 name="ShopsScreen"
                 component={ShopsScreen}
             />
+
         </TopTabsNavigator.Navigator>
     )
 }

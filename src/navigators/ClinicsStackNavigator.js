@@ -1,12 +1,13 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import ClinicDetailsTopTabsNavigator from './ClinicDetailTopTabNavigator';
 import ClinicsTopTabsNavigator from './ClinicsTopTabsNavigator';
+import ClinicDetailStackNavigator from './ClinicDetailStackNavigator';
 
 const StackNavigator = createStackNavigator();
 
 function ClinicsStackNavigator() {
+
     return (
         <StackNavigator.Navigator
             screenOptions={{
@@ -18,9 +19,15 @@ function ClinicsStackNavigator() {
                 name="ClinicsTopTabsNavigator"
                 component={ClinicsTopTabsNavigator}
             />
+
             <StackNavigator.Screen
-                name="ClinicDetailsTopTabsNavigator"
-                component={ClinicDetailsTopTabsNavigator}/>
+                options={{
+                    headerShown: true
+                }}
+                name="ClinicDetailStackNavigator"
+                component={ClinicDetailStackNavigator}
+            />
+
         </StackNavigator.Navigator>
     );
 }

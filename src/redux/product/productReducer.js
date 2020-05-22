@@ -13,34 +13,83 @@ import {
     GET_PRODUCTS_SUCCESS,
 } from './productActionTypes';
 
+
+const review = {
+    author: {
+        name: 'Zeus Jupiter Ra',
+        image: 'https://static01.nyt.com/images/2020/04/22/science/22VIRUS-PETCATS1/22VIRUS-PETCATS1-mediumSquareAt3X.jpg'
+    },
+    review: 'This is one beautiful shop with beautiful products and staff. I love you.',
+    rating: 5,
+    createdAt: "2020-08-29"
+};
+
+
 const dogChain = {
     name: "Dog Chain",
     price: 45,
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo",
     rating: 4.5,
     image: "https://images-na.ssl-images-amazon.com/images/I/61RIKfwtBeL._AC_SL1100_.jpg",
-    category: "accessory"
+    category: "accessory",
+    reviews: [review],
+    owner: {
+        name: 'Stanley Hayford',
+        email: 'hayfordstanley@gmail.com',
+        contact: '+233270048319'
+    },
+    location: {
+        address: 'Haatso Agbogba Street',
+        country: 'Ghana',
+        city: 'Accra',
+        state: 'Greater Accra',
+    }
 }
 
 const dog = {
     name: "Rottweiler Dog",
     price: 45,
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo",
-    rating: 44.2,
+    rating: 4.2,
     category: "pet",
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/26/Rottweiler_standing_facing_left.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/26/Rottweiler_standing_facing_left.jpg",
+    reviews: [review, review, review],
+    owner: {
+        name: 'Stanley Hayford',
+        email: 'hayfordstanley@gmail.com',
+        contact: '+233270048319'
+    },
+    location: {
+        address: 'Haatso Agbogba Street',
+        country: 'Ghana',
+        city: 'Accra',
+        state: 'Greater Accra',
+    }
 }
 
 const cat = {
     name: "American long hair",
     price: 520,
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo",
-    rating: 5,
+    rating: 4.5,
     category: "pet",
-    image: "https://static01.nyt.com/images/2020/04/22/science/22VIRUS-PETCATS1/22VIRUS-PETCATS1-mediumSquareAt3X.jpg"
+    image: "https://static01.nyt.com/images/2020/04/22/science/22VIRUS-PETCATS1/22VIRUS-PETCATS1-mediumSquareAt3X.jpg",
+    reviews: [review, review, review, review, review],
+    owner: {
+        name: 'Stanley Hayford',
+        email: 'hayfordstanley@gmail.com',
+        contact: '+233270048319'
+    },
+    location: {
+        address: 'Haatso Agbogba Street',
+        country: 'Ghana',
+        city: 'Accra',
+        state: 'Greater Accra',
+    }
 }
+
 const INITIAL_STATE = {
-    products: [cat, dog, dogChain],
+    products: [cat, dog, dogChain, cat, dog, dogChain, cat, dog, dogChain, cat, dog, dogChain],
     loading: false,
     error: null,
 };

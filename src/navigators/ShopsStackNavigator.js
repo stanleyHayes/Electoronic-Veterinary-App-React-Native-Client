@@ -1,13 +1,11 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-
 import ShopTopTabsNavigator from './ShopTopTabsNavigator';
-
-import ProductDetailStackNavigator from './ProductDetailStackNavigator';
 import ShopDetailStackNavigator from './ShopDetailStackNavigator';
-import ProductDetailsTopTabsNavigator from './ProductDetailsTopTabsNavigator';
-import ShopDetailsTopTabsNavigator from './ShopDetailsTopTabsNavigator';
+import ProductsScreen from '../screens/products/ProductsScreen';
+import ProductDetailsScreen from '../screens/products/ProductDetailsScreen';
+import ProductInformationScreen from '../screens/products/ProductInformationScreen';
 
 const StackNavigator = createStackNavigator();
 
@@ -15,29 +13,21 @@ function ShopsStackNavigator() {
 
     return (
         <StackNavigator.Navigator
-            initialRouteName="ShopTopTabsNavigator"
-            screenOptions={{ headerShown: true, title: "Shop"}}>
+            initialRouteName="ProductsScreen"
+            screenOptions={{ headerShown: true, title: "Products"}}>
 
             <StackNavigator.Screen
-                name="ShopTopTabsNavigator"
-                component={ShopTopTabsNavigator}
+                name="ProductsScreen"
+                component={ProductsScreen}
             />
 
             <StackNavigator.Screen
-                options={{
-                    title: "Shop Detail"
-                }}
-                name="ShopDetailsTopTabsNavigator"
-                component={ShopDetailsTopTabsNavigator}
+                name="ProductInformationScreen"
+                component={ProductInformationScreen}
             />
 
-            <StackNavigator.Screen
-                options={{
-                    title: "Product"
-                }}
-                name="ProductDetailsTopTabsNavigator"
-                component={ProductDetailsTopTabsNavigator}
-            />
+
+
 
         </StackNavigator.Navigator>
     )
