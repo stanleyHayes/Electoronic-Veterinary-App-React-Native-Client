@@ -1,7 +1,7 @@
 import React from 'react';
-import {CardItem, Card, Left, Body, Right, Thumbnail, Text, H3, Icon} from 'native-base';
+import {CardItem, Card, Left, Body, Right, Thumbnail, Text, Icon} from 'native-base';
 import {Avatar} from 'react-native-paper';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
 function TopicItem({item, navigation}) {
 
@@ -13,7 +13,7 @@ function TopicItem({item, navigation}) {
     return (
         <Card>
             <CardItem
-                onPress={()=> (navigation.navigate("TopicCommentsScreen", {topic: item}))}
+                onPress={() => (navigation.navigate('TopicCommentsScreen', {topic: item}))}
                 bordered={true} header={true} button={true}>
                 <Left>
                     {(item.author.image) ?
@@ -33,21 +33,33 @@ function TopicItem({item, navigation}) {
                 </Body>
             </CardItem>
             <CardItem bordered={true}>
-                <Left>
-                    <Text style={styles.replyText}>{item.replies.length} {item.replies.length === 1 ? "reply": "replies"}</Text>
-                </Left>
-                <Body>
-                    <Text style={styles.replyText}>{item.favorites.length} favorites</Text>
-                </Body>
-                <Right>
-                    {
-                        item.replies.includes(item.author.id) ? (
-                            <Icon name="favorite" type="MaterialIcons" color={"red"}/>
-                        ) : (
-                            <Icon name="favorite-border" type="MaterialIcons"/>
-                        )
-                    }
-                </Right>
+                <View style={styles.buttonsContainer}>
+                    <View style={styles.item}>
+                        <Text style={styles.replyText}>{item.replies.length} {item.replies.length === 1 ? 'reply' : 'replies'}</Text>
+                    </View>
+                    <View style={styles.item}>
+                        <Text style={styles.replyText}>{item.favorites.length} favorites</Text>
+                    </View>
+                    <View style={styles.item}>
+                        <Text style={styles.replyText}>{item.favorites.length} shares</Text>
+                    </View>
+                </View>
+            </CardItem>
+            <CardItem bordered={true}>
+                <View style={styles.buttonsContainer}>
+                    <View style={styles.item}>
+                        <Icon style={styles.icon} name="reply" type="MaterialIcons"/>
+                        <Text style={styles.label}>Reply</Text>
+                    </View>
+                    <View style={styles.item}>
+                        <Icon style={styles.icon} name="favorite" type="MaterialIcons"/>
+                        <Text style={styles.label}>Favorite</Text>
+                    </View>
+                    <View style={styles.item}>
+                        <Icon style={styles.icon} name="share" type="MaterialIcons"/>
+                        <Text style={styles.label}>Share</Text>
+                    </View>
+                </View>
             </CardItem>
         </Card>
     );
@@ -61,20 +73,36 @@ const styles = StyleSheet.create({
     replyText: {
         fontSize: 14,
         color: '#888888',
-        fontWeight: "bold"
+        fontWeight: 'bold',
     },
     descriptionText: {
-        color: "#888888",
-        fontSize: 14
+        color: '#888888',
+        fontSize: 14,
     },
     authorName: {
-        fontWeight: "bold",
-        fontSize: 20
+        fontWeight: 'bold',
+        fontSize: 20,
     },
     subject: {
         fontSize: 18,
-        fontWeight: "bold",
-        color: "#777777"
+        fontWeight: 'bold',
+        color: '#777777',
+    },
+    buttonsContainer: {
+        flexDirection: 'row',
+        flex: 1,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    item: {
+        flexDirection: 'row',
+    },
+    label: {
+        fontSize: 14,
+        color: '#777777',
+    },
+    icon:{
+        fontSize: 20
     }
 });
 export default TopicItem;

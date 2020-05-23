@@ -3,9 +3,9 @@ import {CardItem, Card, Thumbnail, Left, Body, Text} from 'native-base';
 import {Rating} from 'react-native-ratings';
 import {StyleSheet} from 'react-native';
 
-function ReviewItem({item}) {
+function HorizontalReviewItem({item}) {
     return (
-        <Card>
+        <Card style={styles.card}>
             <CardItem bordered={true}>
                 <Left>
                     <Thumbnail
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         borderRadius: 24,
     },
     card: {
-        maxWidth: '100%',
+        maxWidth: 300,
     },
     name: {
         fontWeight: 'bold',
@@ -64,4 +64,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ReviewItem;
+export default HorizontalReviewItem;

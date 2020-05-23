@@ -2,7 +2,6 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import ClinicGalleryScreen from '../screens/clinics/ClinicGalleryScreen';
-import ClinicStaffScreen from '../screens/clinics/ClinicStaffScreen';
 import ClinicReviewScreen from '../screens/clinics/ClinicReviewsScreen';
 import ClinicFacilitiesScreen from '../screens/clinics/ClinicFacilitiesScreen';
 import ClinicInformationScreen from '../screens/clinics/ClinicInformationScreen';
