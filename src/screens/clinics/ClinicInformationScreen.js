@@ -148,7 +148,7 @@ function ClinicInformationScreen({route, navigation}) {
                                         ) : (
                                             <FlatList
                                                 horizontal={true}
-                                                data={clinic.products}
+                                                data={clinic.doctors}
                                                 keyExtractor={function (item, index) {
                                                     return index.toString();
                                                 }}
